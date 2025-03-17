@@ -5,7 +5,7 @@ import Modal from "@/components/Modal";
 import ModalContent from "@/components/ModalContent";
 
 const JobSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -38,7 +38,6 @@ const JobSection = () => {
           </p>
 
           <button
-            onClick={() => setIsOpen(true)}
             className="cursor-pointer bg-yellow-400 font-bold text-blue-900 px-6 py-3 rounded-lg
               hover:bg-yellow-500 transition-colors
               shadow-md hover:shadow-lg"
