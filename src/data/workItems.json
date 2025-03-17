@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "icons/check-circle.svg",
+    "title": "Consistent Work",
+    "description": "Get matched with high-volume projects, no chasing jobs."
+  },
+  {
+    "icon": "icons/check-circle.svg",
+    "title": "Fast Payments",
+    "description": "No more waiting for builders to process invoices."
+  },
+  {
+    "icon": "icons/check-circle.svg",
+    "title": "No Admin Hassles",
+    "description": "We handle the paperwork, so you focus on roofing."
+  },
+  {
+    "icon": "icons/check-circle.svg",
+    "title": "Fair Pricing",
+    "description": "Transparent rates with structured agreements."
+  },
+  {
+    "icon": "icons/check-circle.svg",
+    "title": "Work with Insurance Builders",
+    "description": "More stable, high-margin projects."
+  }
+]
