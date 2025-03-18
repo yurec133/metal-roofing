@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import {
   ClipboardDocumentListIcon,
   CheckCircleIcon,
   BriefcaseIcon,
 } from "@heroicons/react/24/outline";
+import { useScroll } from "@/context/scrollContext";
 interface Item {
   title: string;
   desc: string;
@@ -28,6 +30,7 @@ const items: Item[] = [
 ];
 
 const GetStartedSection = () => {
+  const { scrollToBlock } = useScroll();
   return (
     <section className={"text-center mb-14 md:mb-24"}>
       <div className="container mx-auto px-4 max-w-5xl">
@@ -45,7 +48,10 @@ const GetStartedSection = () => {
             </div>
           ))}
         </div>
-        <button className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition">
+        <button
+          onClick={() => scrollToBlock("sectionJobApp")}
+          className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition"
+        >
           Apply Now
         </button>
       </div>

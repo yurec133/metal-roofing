@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import workItems from "../data/workItems.json";
 import WorkItem from "@/components/WorkItem";
+import { useScroll } from "@/context/scrollContext";
 
 const JoinUsSection = () => {
+  const { scrollToBlock } = useScroll();
   return (
     <section className="py-10 md:pt-12 md:pb-28">
       <div className="container mx-auto px-4 max-w-5xl">
@@ -19,15 +22,16 @@ const JoinUsSection = () => {
             />
           ))}
         </div>
-          <div className="flex justify-center">
-              <button
-                  className="cursor-pointer bg-blue-600 font-bold text-white px-6 py-3 rounded-lg
+        <div className="flex justify-center">
+          <button
+            onClick={() => scrollToBlock("sectionJobApp")}
+            className="cursor-pointer bg-blue-600 font-bold text-white px-6 py-3 rounded-lg
               hover:bg-blue-700 transition-colors
               shadow-md hover:shadow-lg"
-              >
-                  Apply Now - Get Pre-Qualified
-              </button>
-          </div>
+          >
+            Apply Now - Get Pre-Qualified
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -1,22 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HomeIcon } from "@heroicons/react/24/solid";
 import Modal from "@/components/Modal";
 import ModalContent from "@/components/ModalContent";
+import { useScroll } from "@/context/scrollContext";
 
 const JobSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+  const [isOpen, setIsOpen] = useState(true);
+  const { scrollToBlock } = useScroll();
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
   return (
     <>
       <section className="pb-10 md:pb-14 pt-5 bg-gradient-to-l from-blue-700 via-blue-800 to-blue-900 shadow-lg text-white text-center">
@@ -38,6 +30,7 @@ const JobSection = () => {
           </p>
 
           <button
+            onClick={() => scrollToBlock("sectionJobApp")}
             className="cursor-pointer bg-yellow-400 font-bold text-blue-900 px-6 py-3 rounded-lg
               hover:bg-yellow-500 transition-colors
               shadow-md hover:shadow-lg"
@@ -47,7 +40,10 @@ const JobSection = () => {
         </div>
       </section>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ModalContent />
+        <ModalContent
+          scrollToBlock={scrollToBlock}
+          onClose={() => setIsOpen(false)}
+        />
       </Modal>
     </>
   );

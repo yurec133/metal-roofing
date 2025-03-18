@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { Shield } from "lucide-react";
+import { useScroll } from "@/context/scrollContext";
 
 const criteria = [
   "Licensed & insured roofing subcontractors",
@@ -10,6 +12,7 @@ const criteria = [
 ];
 
 const GoodFitSection = () => {
+  const { scrollToBlock } = useScroll();
   return (
     <div className="container mx-auto px-4 max-w-5xl">
       <section className="bg-gray-50 py-8 md:py-12 px-4 rounded-2xl text-center mb-14 md:mb-28">
@@ -35,7 +38,10 @@ const GoodFitSection = () => {
               </li>
             ))}
           </ul>
-          <button className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition">
+          <button
+            onClick={() => scrollToBlock("sectionJobApp")}
+            className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition"
+          >
             Apply Now – Join the Network
           </button>
         </div>

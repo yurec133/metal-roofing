@@ -30,12 +30,20 @@ export interface FormData {
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [validatedSteps, setValidatedSteps] = useState<number[]>([]);
+  const [alert, setAlert] = useState<{
+    message: string;
+    type: "success" | "error" | null;
+  }>({
+    message: "",
+    type: null,
+  });
 
   const {
     control,
     handleSubmit,
     formState: { errors },
     trigger,
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
@@ -60,8 +68,8 @@ const MultiStepForm = () => {
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     console.log(data);
-
-    const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/22112272/2l08y6g/";
+    const zapierWebhookUrl =
+      "https://hooks.zapier.com/hooks/catch/22112272/2l08y6g/";
 
     try {
       const response = await fetch(zapierWebhookUrl, {
@@ -76,8 +84,19 @@ const MultiStepForm = () => {
         throw new Error("Failed to send data to Zapier");
       }
 
+      setCurrentStep(1);
+      reset();
+      setAlert({
+        message: "Data successfully sent to Zapier",
+        type: "success",
+      });
+
       console.log("Data successfully sent to Zapier");
     } catch (error) {
+      setAlert({
+        message: "Error sending data to Zapier. Please try again.",
+        type: "error",
+      });
       console.error("Error sending data to Zapier:", error);
     }
   };
@@ -114,44 +133,73 @@ const MultiStepForm = () => {
     }
   };
 
+  const closeAlert = () => {
+    setAlert({
+      message: "",
+      type: null,
+    });
+  };
+
   return (
-    <form
-      className="max-w-3xl mx-auto"
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-    >
-      <StepNavigation
-        currentStep={currentStep}
-        handleTabClick={handleTabClick}
-        validatedSteps={validatedSteps}
-      />
-
-      {currentStep === 1 && (
-        <Step1Form
-          control={control}
-          errors={errors}
-          handleTabClick={handleTabClick}
-        />
+    <>
+      {alert.message && (
+        <div
+          className={`fixed top-4 left-1/2 transform -translate-x-1/2 p-6 mb-4 rounded-md ${
+            alert.type === "success"
+              ? "bg-green-100 text-green-700"
+              : "bg-red-100 text-red-700"
+          }`}
+        >
+          <div className="flex justify-between items-center">
+            <span>{alert.message}</span>
+            <button
+              onClick={closeAlert}
+              className="cursor-pointer absolute right-[10px] top-[2px] text-2xl font-bold text-gray-700 hover:text-gray-500"
+              aria-label="Close alert"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
       )}
-
-      {currentStep === 2 && (
-        <Step2Form
-          control={control}
-          errors={errors}
+      <form
+        className="max-w-3xl mx-auto"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <StepNavigation
+          currentStep={currentStep}
           handleTabClick={handleTabClick}
+          validatedSteps={validatedSteps}
         />
-      )}
 
-      {currentStep === 3 && (
-        <Step3Form
-          control={control}
-          errors={errors}
-          handleTabClick={handleTabClick}
-          handleSubmit={handleSubmit(onSubmit)}
-        />
-      )}
-    </form>
+        {currentStep === 1 && (
+          <Step1Form
+            control={control}
+            errors={errors}
+            handleTabClick={handleTabClick}
+          />
+        )}
+
+        {currentStep === 2 && (
+          <Step2Form
+            control={control}
+            errors={errors}
+            handleTabClick={handleTabClick}
+          />
+        )}
+
+        {currentStep === 3 && (
+          <Step3Form
+            control={control}
+            errors={errors}
+            handleTabClick={handleTabClick}
+            handleSubmit={handleSubmit(onSubmit)}
+          />
+        )}
+      </form>
+    </>
   );
 };
 

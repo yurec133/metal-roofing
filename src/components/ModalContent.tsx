@@ -1,6 +1,10 @@
 import React from "react";
+interface ModalContentProps {
+  scrollToBlock: any;
+  onClose: () => void;
+}
 
-const ModalContent = () => {
+const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
   return (
     <div className="text-xs">
       <h1 className="text-center text-3xl font-bold text-blue-500 mb-4">
@@ -149,12 +153,15 @@ const ModalContent = () => {
       </div>
 
       <div className="text-center">
-        <a
-          href="#"
+        <button
+          onClick={() => {
+            scrollToBlock("sectionJobApp");
+            onClose(); // Викликає onClose після прокручування
+          }}
           className="bg-blue-600 text-white inline-block font-bold py-2 px-4 md:py-3 md:px-6 rounded-full text-xs md:text-lg shadow-md hover:bg-blue-700 mb-3"
         >
           🚀 APPLY NOW & START GETTING JOBS THIS WEEK! 🚀
-        </a>
+        </button>
         <p className="text-gray-500 text-xs">
           (Spots are limited—we only take a certain number of crews per region!)
         </p>
