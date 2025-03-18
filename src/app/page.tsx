@@ -4,6 +4,7 @@ import GoodFitSection from "@/components/GoodFitSection";
 import GetStartedSection from "@/components/GetStartedSection";
 import QuestionSection from "@/components/QuestionSection";
 import Footer from "@/components/Footer";
+import RoofingJobAppSection from "@/components/RoofingJobAppSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <JoinUsSection />
       <GoodFitSection />
       <GetStartedSection />
+      <RoofingJobAppSection />
       <QuestionSection />
       <Footer />
     </>

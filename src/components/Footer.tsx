@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-sm font-bold text-white mb-3">Quick Links</h3>
-            <ul className="space-y-1">
+            <ul className="space-y-0 md:space-y-1">
               {[
                 "About Us",
                 "Apply Now",
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-sm font-bold text-white mb-3">Contact Us</h3>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-1 md:space-y-2 text-sm">
               <div className="flex items-center justify-center sm:justify-start text-blue-200">
                 <Mail className="w-4 h-4 mr-2" />
                 <a

@@ -5,7 +5,7 @@ import Modal from "@/components/Modal";
 import ModalContent from "@/components/ModalContent";
 
 const JobSection = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
