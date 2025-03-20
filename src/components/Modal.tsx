@@ -15,7 +15,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
       onClick={onClose}
     >
       <div
-        className="bg-white p-6 rounded-lg shadow-lg w-[850px] relative max-h-[80vh] md:max-h-[93vh] mx-7 lg:mx-0 overflow-y-auto"
+        className="bg-white pt-8 p-6 rounded-lg shadow-lg w-[850px] relative mx-7 lg:mx-0"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -24,7 +24,9 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
         >
           ✖
         </button>
-        {children}
+        <div className="overflow-y-auto max-h-[80vh] md:max-h-[88vh] mr-[-10px] pr-[8px]">
+          {children}
+        </div>
       </div>
     </div>
   );
