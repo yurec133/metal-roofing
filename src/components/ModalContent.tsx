@@ -6,15 +6,15 @@ interface ModalContentProps {
 
 const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
   return (
-    <div className="text-xs">
-      <h1 className="text-center text-3xl font-bold text-blue-500 mb-4">
+    <div className="text-xs/">
+      <h1 className="text-center text-2xl md:text-4xl font-bold text-blue-500 mb-4">
         🔥 ATTENTION METAL ROOFING <br /> CONTRACTORS 🔥
       </h1>
-      <h2 className="text-center text-2xl font-bold mb-5">
+      <h2 className="text-center text-xl md:text-3xl font-bold mb-9">
         Get Consistent, High-Paying Jobs Without Chasing <br /> Builders Or
         Dealing With Slow Payments!
       </h2>
-      <div className="bg-blue-50 p-4 rounded-lg mb-6">
+      <div className="bg-blue-50 p-4 rounded-lg mb-8">
         <p className="mb-3">
           Let’s be real… If you’re a metal roofing contractor, you know the #1
           biggest headache is dealing with:
@@ -48,7 +48,7 @@ const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
           insurance jobs—so you can skip the BS and focus on roofing.
         </p>
       </div>
-      <div className="bg-green-50 p-4 rounded-lg mb-6">
+      <div className="bg-green-50 p-4 rounded-lg mb-8">
         <h3 className="text-lg font-bold mb-3">🔥 HERE’S HOW IT WORKS…</h3>
         <ul className="mt-2 space-y-2 mb-4">
           <li className="flex items-center">
@@ -72,7 +72,7 @@ const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
         </p>
         <p>Just reliable jobs, fast payments, and ZERO admin headaches.</p>
       </div>
-      <div className="bg-yellow-50 p-4 rounded-lg mb-6">
+      <div className="bg-yellow-50 p-4 rounded-lg mb-8">
         <h3 className="font-bold text-lg">🔨 WHO WE'RE LOOKING FOR:</h3>
         <ul className="mt-3 space-y-2">
           <li>🚀 Licensed & insured metal roofing subcontractors</li>
@@ -88,7 +88,7 @@ const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
           </li>
         </ul>
       </div>
-      <div className="bg-blue-50 p-4 rounded-lg mb-6">
+      <div className="bg-blue-50 p-4 rounded-lg mb-8">
         <h3 className="font-bold text-lg">
           🔥 WHY METAL ROOFING CREWS LOVE WORKING WITH US:
         </h3>
@@ -122,7 +122,7 @@ const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
           </li>
         </ul>
       </div>
-      <div className="bg-green-50 p-4 rounded-lg mb-6">
+      <div className="bg-green-50 p-4 rounded-lg mb-8">
         <h3 className="font-bold text-lg mb-3">
           🔥 DON'T TAKE OUR WORD FOR IT—SEE WHAT OTHER ROOFERS SAY…
         </h3>
@@ -136,8 +136,7 @@ const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
           no hassle—just jobs on <br /> autopilot.”
         </p>
       </div>
-
-      <div className="bg-yellow-50 p-4 rounded-lg mb-6">
+      <div className="bg-yellow-50 p-4 rounded-lg mb-8">
         <h3 className="font-bold text-lg">🔥 FREQUENTLY ASKED QUESTIONS</h3>
         <p className="font-bold mt-2">🔷 Do I have to pay to join?</p>
         <p>NO. It’s free to apply and join. You only get paid jobs.</p>
@@ -151,12 +150,11 @@ const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
         <p className="font-bold mt-2">🔷 Do I need insurance?</p>
         <p>Yes, you need public liability insurance to qualify.</p>
       </div>
-
       <div className="text-center">
         <button
           onClick={() => {
             scrollToBlock("sectionJobApp");
-            onClose(); // Викликає onClose після прокручування
+            onClose();
           }}
           className="bg-blue-600 text-white inline-block font-bold py-2 px-4 md:py-3 md:px-6 rounded-full text-xs md:text-lg shadow-md hover:bg-blue-700 mb-3"
         >

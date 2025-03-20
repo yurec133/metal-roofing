@@ -16,7 +16,7 @@ export interface FormData {
   yearsOfMetalRoofingExperience: number;
   roofingLicenseNumber: string;
   publicLiabilityInsuranceNumber: string;
-  preferredWorkLocation: string;
+  preferredWorkLocation: string[];
   tinOnOff: number;
   tieDownUpgrades: number;
   metalBattens: number;
@@ -25,6 +25,7 @@ export interface FormData {
   availability: string;
   startDate: Date;
   maxTravelDistance: number;
+  town: string;
 }
 
 const MultiStepForm = () => {
@@ -54,7 +55,7 @@ const MultiStepForm = () => {
       yearsOfMetalRoofingExperience: 0,
       roofingLicenseNumber: "",
       publicLiabilityInsuranceNumber: "",
-      preferredWorkLocation: "",
+      preferredWorkLocation: [],
       tinOnOff: 0,
       tieDownUpgrades: 0,
       metalBattens: 0,
@@ -63,6 +64,7 @@ const MultiStepForm = () => {
       availability: "",
       startDate: new Date(),
       maxTravelDistance: 1,
+      town: "",
     },
   });
 
@@ -70,6 +72,8 @@ const MultiStepForm = () => {
     console.log(data);
     const zapierWebhookUrl =
       "https://hooks.zapier.com/hooks/catch/22112272/2l08y6g/";
+
+    // const serverUrl = "http://localhost:5000/sendToZapier";
 
     try {
       const response = await fetch(zapierWebhookUrl, {
@@ -85,13 +89,14 @@ const MultiStepForm = () => {
       }
 
       setCurrentStep(1);
+      setValidatedSteps([]);
       reset();
       setAlert({
         message: "Data successfully sent to Zapier",
         type: "success",
       });
 
-      console.log("Data successfully sent to Zapier");
+      console.log("Data successfully sent to Zapier Front");
     } catch (error) {
       setAlert({
         message: "Error sending data to Zapier. Please try again.",
@@ -144,7 +149,7 @@ const MultiStepForm = () => {
     <>
       {alert.message && (
         <div
-          className={`fixed top-4 left-1/2 transform -translate-x-1/2 p-6 mb-4 rounded-md ${
+          className={`fixed top-4 left-1/2 transform -translate-x-1/2 p-8 mb-4 rounded-md ${
             alert.type === "success"
               ? "bg-green-100 text-green-700"
               : "bg-red-100 text-red-700"
