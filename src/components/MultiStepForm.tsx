@@ -180,7 +180,7 @@ const MultiStepForm = () => {
           We cannot guarantee that you'll be accepted into the group.
         </h2>
         <Image
-          src="/australian-metal-roofing.webp"
+          src={process.env.NEXT_PUBLIC_BASE_PATH + "/australian-metal-roofing.webp"}
           alt="Metal Roofing"
           width={1024}
           height={1024}
