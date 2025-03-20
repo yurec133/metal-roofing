@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Shield } from "lucide-react";
-import { useScroll } from "@/context/scrollContext";
+import {useScroll} from "@/hooks/useScroll";
 
 const criteria = [
   "Licensed & insured roofing subcontractors",

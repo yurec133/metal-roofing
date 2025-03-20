@@ -5,7 +5,7 @@ import {
   CheckCircleIcon,
   BriefcaseIcon,
 } from "@heroicons/react/24/outline";
-import { useScroll } from "@/context/scrollContext";
+import {useScroll} from "@/hooks/useScroll";
 interface Item {
   title: string;
   desc: string;

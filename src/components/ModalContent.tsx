@@ -156,7 +156,7 @@ const ModalContent = ({ onClose, scrollToBlock }: ModalContentProps) => {
             scrollToBlock("sectionJobApp");
             onClose();
           }}
-          className="bg-blue-600 text-white inline-block font-bold py-2 px-6 md:py-3 rounded-full text-xs md:text-lg shadow-md hover:bg-blue-700 mb-3"
+          className="cursor-pointer bg-blue-600 text-white inline-block font-bold py-2 px-6 md:py-3 rounded-full text-xs md:text-lg shadow-md hover:bg-blue-700 mb-3"
         >
           🚀 APPLY NOW & START GETTING JOBS THIS WEEK! 🚀
         </button>

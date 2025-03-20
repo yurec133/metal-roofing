@@ -1,12 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { HomeIcon } from "@heroicons/react/24/solid";
 import Modal from "@/components/Modal";
 import ModalContent from "@/components/ModalContent";
-import { useScroll } from "@/context/scrollContext";
+import {useScroll} from "@/hooks/useScroll";
+import {useModal} from "@/hooks/useModal";
 
 const JobSection = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const { isOpen, closeModal } = useModal(true);
   const { scrollToBlock } = useScroll();
 
   return (
@@ -39,11 +40,8 @@ const JobSection = () => {
           </button>
         </div>
       </section>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ModalContent
-          scrollToBlock={scrollToBlock}
-          onClose={() => setIsOpen(false)}
-        />
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <ModalContent scrollToBlock={scrollToBlock} onClose={closeModal} />
       </Modal>
     </>
   );

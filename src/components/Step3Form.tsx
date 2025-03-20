@@ -64,10 +64,8 @@ const Step3Form: React.FC<Step3FormProps> = ({
               )}
             </div>
           ))}
-        </div>
-        <div>
           <div className="mb-4">
-            <label className="text-sm font-medium flex flex-col justify-end text-gray-700 md:min-h-[40px]">
+            <label className="text-sm font-medium text-gray-700">
               Availability*
             </label>
             <Controller
@@ -166,6 +164,22 @@ const Step3Form: React.FC<Step3FormProps> = ({
                 {errors.maxTravelDistance.message}
               </span>
             )}
+          </div>
+        </div>
+        <div>
+          <div className="bg-red-100 px-5 py-8 rounded-lg border-2 border-red-500 text-red-500 sticky top-5">
+            <h3 className={"text-center font-bold text-xl mb-2"}>
+              🚨 WARNING! 🚨
+            </h3>
+            <p className={"mb-2"}>
+              📢 The more competitive your rates, the higher your chances of
+              being selected for regular insurance work.
+            </p>
+            <p>
+              📢 Our insurance builders prioritize roofers who offer fair,
+              market-competitive pricing. Make sure your rates give you the best
+              shot at getting steady jobs!
+            </p>
           </div>
         </div>
       </div>

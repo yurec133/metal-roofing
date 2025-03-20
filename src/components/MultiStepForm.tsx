@@ -8,6 +8,9 @@ import Step1Form from "@/components/Step1Form";
 import StepNavigation from "@/components/StepNavigation";
 import Step2Form from "@/components/Step2Form";
 import Step3Form from "@/components/Step3Form";
+import { useModal } from "@/hooks/useModal";
+import Modal from "@/components/Modal";
+import Image from "next/image";
 
 export interface FormData {
   fullName: string;
@@ -29,6 +32,7 @@ export interface FormData {
 }
 
 const MultiStepForm = () => {
+  const { isOpen, openModal, closeModal } = useModal(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [validatedSteps, setValidatedSteps] = useState<number[]>([]);
   const [alert, setAlert] = useState<{
@@ -98,10 +102,14 @@ const MultiStepForm = () => {
 
       console.log("Data successfully sent to Zapier Front");
     } catch (error) {
-      setAlert({
-        message: "Error sending data to Zapier. Please try again.",
-        type: "error",
-      });
+      setCurrentStep(1);
+      setValidatedSteps([]);
+      reset();
+      openModal();
+      // setAlert({
+      //   message: "Error sending data to Zapier. Please try again.",
+      //   type: "error",
+      // });
       console.error("Error sending data to Zapier:", error);
     }
   };
@@ -167,6 +175,18 @@ const MultiStepForm = () => {
           </div>
         </div>
       )}
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <h2 className="px-5 text-lg text-center md:text-2xl font-bold uppercase text-blue-500 mb-4">
+          We cannot guarantee that you'll be accepted into the group.
+        </h2>
+        <Image
+          src="/australian-metal-roofing.webp"
+          alt="Metal Roofing"
+          width={1024}
+          height={1024}
+          className="w-full h-auto"
+        />
+      </Modal>
       <form
         className="max-w-3xl mx-auto"
         onSubmit={(e) => {

@@ -2,7 +2,7 @@
 import React from "react";
 import workItems from "../data/workItems.json";
 import WorkItem from "@/components/WorkItem";
-import { useScroll } from "@/context/scrollContext";
+import {useScroll} from "@/hooks/useScroll";
 
 const JoinUsSection = () => {
   const { scrollToBlock } = useScroll();
