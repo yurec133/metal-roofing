@@ -88,7 +88,7 @@ const MultiStepForm = () => {
       const response = await fetch(zapierWebhookUrl, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -173,7 +173,7 @@ const MultiStepForm = () => {
           We cannot guarantee that you'll be accepted into the group.
         </h2>
         <Image
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/australian-metal-roofing.webp`}
+          src={'/images/australian-metal-roofing.webp'}
           alt="Metal Roofing"
           width={1024}
           height={1024}
