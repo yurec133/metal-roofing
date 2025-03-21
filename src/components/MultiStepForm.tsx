@@ -179,13 +179,13 @@ const MultiStepForm = () => {
         <h2 className="px-5 text-lg text-center md:text-2xl font-bold uppercase text-blue-500 mb-4">
           We cannot guarantee that you'll be accepted into the group.
         </h2>
-        {/*<Image*/}
-        {/*  src={"metal-roofing/images/australian-metal-roofing.webp"}*/}
-        {/*  alt="Metal Roofing"*/}
-        {/*  width={1024}*/}
-        {/*  height={1024}*/}
-        {/*  className="w-full h-auto"*/}
-        {/*/>*/}
+        <Image
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/australian-metal-roofing.webp`}
+          alt="Metal Roofing"
+          width={1024}
+          height={1024}
+          className="w-full h-auto"
+        />
       </Modal>
       <form
         className="max-w-3xl mx-auto"
@@ -193,13 +193,6 @@ const MultiStepForm = () => {
           e.preventDefault();
         }}
       >
-        <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/australian-metal-roofing.webp`}
-            alt="Metal Roofing"
-            width={1024}
-            height={1024}
-            className="w-full h-auto"
-        />
         <StepNavigation
           currentStep={currentStep}
           handleTabClick={handleTabClick}
