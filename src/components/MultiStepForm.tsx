@@ -84,8 +84,6 @@ const MultiStepForm = () => {
     const zapierWebhookUrl =
       "https://hooks.zapier.com/hooks/catch/22112272/2l08y6g/";
 
-    // const serverUrl = "http://localhost:5000/sendToZapier";
-
     try {
       const response = await fetch(zapierWebhookUrl, {
         method: "POST",
@@ -98,22 +96,13 @@ const MultiStepForm = () => {
       if (!response.ok) {
         throw new Error("Failed to send data to Zapier");
       }
-
-      setCurrentStep(1);
-      setValidatedSteps([]);
-      reset();
-      setAlert({
-        message: "Data successfully sent to Zapier",
-        type: "success",
-      });
-
+      resetFormAndOpenModal();
       console.log("Data successfully sent to Zapier Front");
     } catch (error) {
-      resetFormAndOpenModal();
-      // setAlert({
-      //   message: "Error sending data to Zapier. Please try again.",
-      //   type: "error",
-      // });
+      setAlert({
+        message: "Error sending data to Zapier. Please try again.",
+        type: "error",
+      });
       console.error("Error sending data to Zapier:", error);
     }
   };
