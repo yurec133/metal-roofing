@@ -72,6 +72,13 @@ const MultiStepForm = () => {
     },
   });
 
+  const resetFormAndOpenModal = () => {
+    setCurrentStep(1);
+    setValidatedSteps([]);
+    reset();
+    openModal();
+  };
+
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     console.log(data);
     const zapierWebhookUrl =
@@ -102,10 +109,7 @@ const MultiStepForm = () => {
 
       console.log("Data successfully sent to Zapier Front");
     } catch (error) {
-      setCurrentStep(1);
-      setValidatedSteps([]);
-      reset();
-      openModal();
+      resetFormAndOpenModal();
       // setAlert({
       //   message: "Error sending data to Zapier. Please try again.",
       //   type: "error",
