@@ -194,7 +194,7 @@ const MultiStepForm = () => {
         }}
       >
         <Image
-            src={"/images/australian-metal-roofing.webp"}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/australian-metal-roofing.webp`}
             alt="Metal Roofing"
             width={1024}
             height={1024}
