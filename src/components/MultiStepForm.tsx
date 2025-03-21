@@ -193,6 +193,13 @@ const MultiStepForm = () => {
           e.preventDefault();
         }}
       >
+        <Image
+            src={"/images/australian-metal-roofing.webp"}
+            alt="Metal Roofing"
+            width={1024}
+            height={1024}
+            className="w-full h-auto"
+        />
         <StepNavigation
           currentStep={currentStep}
           handleTabClick={handleTabClick}
