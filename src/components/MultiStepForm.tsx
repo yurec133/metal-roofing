@@ -180,7 +180,7 @@ const MultiStepForm = () => {
           We cannot guarantee that you'll be accepted into the group.
         </h2>
         <Image
-          src={"/images/australian-metal-roofing.webp"}
+          src={"metal-roofing/images/australian-metal-roofing.webp"}
           alt="Metal Roofing"
           width={1024}
           height={1024}
@@ -194,7 +194,7 @@ const MultiStepForm = () => {
         }}
       >
         <Image
-            src={"/images/australian-metal-roofing.webp"}
+            src={"metal-roofing/images/australian-metal-roofing.webp"}
             alt="Metal Roofing"
             width={1024}
             height={1024}
