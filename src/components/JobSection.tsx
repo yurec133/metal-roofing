@@ -12,7 +12,7 @@ const JobSection = () => {
 
   return (
     <>
-      <section className="pb-10 md:pb-14 pt-5 bg-gradient-to-l from-blue-700 via-blue-800 to-blue-900 shadow-lg text-white text-center">
+      <section id={'sectionJob'} className="pb-10 md:pb-14 pt-5 bg-gradient-to-l from-blue-700 via-blue-800 to-blue-900 shadow-lg text-white text-center">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="mb-7 flex items-center justify-end gap-2">
             <div className="flex items-center justify-center w-8 h-8 rounded-[6px] bg-yellow-400">
