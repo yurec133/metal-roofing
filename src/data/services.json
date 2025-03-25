@@ -1,0 +1,94 @@
+{
+  "supplyAndInstallServices": [
+    {
+      "name": "tinOnOff",
+      "label": "Supply and install new roof + remove old roof (Tin on tin off) per m²"
+    },
+    {
+      "name": "metalBattens",
+      "label": "Supply and install new Metal battens + remove old per m"
+    },
+    {
+      "name": "anticonBlanket",
+      "label": "Supply and install 60mm Anticon Blanket Insulation per m²"
+    },
+    {
+      "name": "sarking",
+      "label": "Supply and Install Sarking per m²"
+    },
+    {
+      "name": "tieDownUpgrades",
+      "label": "Supply and install Tie Down upgrades per m²"
+    },
+    {
+      "name": "dektites",
+      "label": "Supply & Install Dektites / Vent Pipes / Penetrations"
+    },
+    {
+      "name": "skylightDome",
+      "label": "Supply and Install New Skylight Dome"
+    },
+    {
+      "name": "customFlashings",
+      "label": "Supply and Install Custom Flashings per m"
+    },
+    {
+      "name": "newGuttering",
+      "label": "Remove, Supply and Install New Guttering per m"
+    },
+    {
+      "name": "gutterGuards",
+      "label": "Remove, Supply and Install New Gutter Guards per m"
+    },
+    {
+      "name": "guardRail",
+      "label": "Supply and install guard rail - per lineal metre"
+    }
+  ],
+  "laborOnlyServices": [
+    {
+      "name": "removeRoof",
+      "label": "Labor Only - Remove and Install New Roof (Tin on tin off) per m²"
+    },
+    {
+      "name": "installBattens",
+      "label": "Labor Only - Remove / Install Metal Battens per m"
+    },
+    {
+      "name": "installTieDowns",
+      "label": "Labor Only - Remove / Install Tie Down upgrades per m²"
+    },
+    {
+      "name": "installInsulation",
+      "label": "Labor Only - Remove / Install Insulation/Sarking per m²"
+    },
+    {
+      "name": "installWhirlybirds",
+      "label": "Labor Only - Install Whirlybirds"
+    },
+    {
+      "name": "installDektites",
+      "label": "Labor Only - Install Dektites / Vent Pipes / Penetrations"
+    },
+    {
+      "name": "installGutters",
+      "label": "Labor Only - Remove and Install New Gutters per m"
+    },
+    {
+      "name": "installGutterGuards",
+      "label": "Labor Only - Remove and Install New Gutter Guards per m"
+    },
+    {
+      "name": "installFlashings",
+      "label": "Labor Only - Remove and Install Flashings per m"
+    },
+    {
+      "name": "reinstallAntenna",
+      "label": "Remove and Reinstall TV Antenna"
+    },
+    {
+      "name": "rubbishRemoval",
+      "label": "Rubbish removal fee"
+    }
+  ]
+}
