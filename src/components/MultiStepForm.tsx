@@ -178,6 +178,7 @@ const MultiStepForm = () => {
           width={1024}
           height={1024}
           className="w-full h-auto"
+          placeholder="blur"
           priority
         />
       </Modal>
