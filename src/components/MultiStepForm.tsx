@@ -80,7 +80,6 @@ const MultiStepForm = () => {
   };
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    console.log(data);
     const zapierWebhookUrl =
       "https://hooks.zapier.com/hooks/catch/4521522/2et212u/";
 
